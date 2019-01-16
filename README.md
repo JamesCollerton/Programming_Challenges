@@ -1,3 +1,3 @@
 # Project Euler
 
-Solutions to some of the Project Euler Exercises.
+Solutions to some of the [Project Euler](https://projecteuler.net/archives) Exercises.
