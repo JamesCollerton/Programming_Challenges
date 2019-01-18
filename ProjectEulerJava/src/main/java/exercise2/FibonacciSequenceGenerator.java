@@ -22,25 +22,34 @@ import java.util.stream.IntStream;
  */
 class FibonacciSequenceGenerator {
 
-    List<Integer> apply(int i) {
-        return generateSequence(i, new ArrayList<>());
+    List<Integer> apply(int upperBound) {
+        List<Integer> resultList = new ArrayList<>();
+
+        if(upperBound < 1) {
+            return resultList;
+        }
+
+        resultList.add(1);
+
+        if(upperBound < 2) {
+            return resultList;
+        }
+
+        resultList.add(2);
+
+        return generateSequence(upperBound, resultList);
     }
 
-    private List<Integer> generateSequence(int i, List<Integer> existingList) {
-        if(i == 0) {
-            existingList.add(1);
+    private List<Integer> generateSequence(int upperBound, List<Integer> existingList) {
+        int existingListSize = existingList.size();
+        int newTerm = existingList.get(existingListSize - 1) + existingList.get(existingListSize - 2);
+
+        if(newTerm >= upperBound) {
             return existingList;
         }
-        if(i == 1) {
-            existingList.add(1);
-            existingList.add(2);
-            return existingList;
-        }
-        // New list is equal to the old list plus the new term, which is the last two terms of the old list
-        List<Integer> previousSequence = generateSequence(i - 1, existingList);
-        int previousSequenceSize = previousSequence.size();
-        int newTerm = previousSequence.get(previousSequenceSize - 1) + previousSequence.get(previousSequenceSize - 2);
+
         existingList.add(newTerm);
-        return existingList;
+
+        return generateSequence(upperBound, existingList);
     }
 }
