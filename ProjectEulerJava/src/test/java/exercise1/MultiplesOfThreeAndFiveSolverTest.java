@@ -1,6 +1,5 @@
 package exercise1;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
