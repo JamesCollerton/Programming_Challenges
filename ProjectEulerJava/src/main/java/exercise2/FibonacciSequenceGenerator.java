@@ -17,6 +17,8 @@ import java.util.stream.IntStream;
     Fib(3)  = Fib(2) + Fib(1)
     ...
     Fib(n)  = Fib(n - 1) + Fib(n - 2)
+
+    Probably go all the way down the list
  */
 class FibonacciSequenceGenerator {
 
@@ -30,10 +32,14 @@ class FibonacciSequenceGenerator {
             return existingList;
         }
         if(i == 1) {
+            existingList.add(1);
             existingList.add(2);
             return existingList;
         }
-        int newTerm = existingList.get(existingList.get(existingList.size())) + existingList.get(existingList.get(existingList.size() - 1));
+        // New list is equal to the old list plus the new term, which is the last two terms of the old list
+        List<Integer> previousSequence = generateSequence(i - 1, existingList);
+        int previousSequenceSize = previousSequence.size();
+        int newTerm = previousSequence.get(previousSequenceSize - 1) + previousSequence.get(previousSequenceSize - 2);
         existingList.add(newTerm);
         return existingList;
     }
