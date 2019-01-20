@@ -1,4 +1,4 @@
-package exercise1;
+package projecteuler.exercise1;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package exercise2;
+package projecteuler.exercise2;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import java.util.ArrayList;

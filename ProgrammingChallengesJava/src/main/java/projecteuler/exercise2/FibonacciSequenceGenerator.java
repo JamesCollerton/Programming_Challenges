@@ -1,10 +1,7 @@
-package exercise2;
+package projecteuler.exercise2;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /*
     Example terms
